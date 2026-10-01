@@ -115,8 +115,9 @@ INSERT IGNORE INTO reviews (id, book_id, name, rating, date, content) VALUES
 (19, 10, '维克多·雨果', '★★★★★', '2026-03-13', '丑在美的旁边，畸形靠近着优美，丑怪藏在崇高背后，美与丑并存，光明与黑暗相共。'),
 (20, 10, '读者', '★★★★☆', '2026-02-29', '卡西莫多的形象让人难忘，这是一部关于爱与美的经典之作。');
 
--- 默认管理员账号未预置：原脚本含明文示例密码，公开源码时已移除。
--- 如需演示管理端，请在本地创建账号并仅用于可信开发环境。
+-- 创建默认管理员账号（仅供演示；密码：admin123）
+INSERT IGNORE INTO users (id, username, password, email, role, enabled) VALUES
+(1, 'admin', 'admin123', 'admin@onlinelibrary.com', 'admin', TRUE);
 
 -- 为现有书籍补充库存（ALTER TABLE自动添加stock列后，设置默认库存）
 UPDATE books SET stock = 50 WHERE stock IS NULL OR stock = 0;
