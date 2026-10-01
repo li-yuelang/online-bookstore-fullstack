@@ -1,0 +1,284 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "JavaScript高级程序设计",
+      "author": "尼古拉斯·扎卡斯",
+      "price": 99.00,
+      "image": "https://file.ituring.com.cn/LargeCover/20080d81a4fb8a268c40",
+      "rating": 5,
+      "ratingCount": 120,
+      "publisher": "人民邮电出版社",
+      "publishDate": "2020-01-01",
+      "pages": 768,
+      "isbn": "9787115528039",
+      "description": "《JavaScript高级程序设计》是一本面向中级到高级JavaScript开发人员的专业书籍，全面介绍了JavaScript语言的核心概念、技术和最佳实践。本书涵盖了JavaScript的语法、DOM操作、事件处理、面向对象编程、异步编程、Canvas绘图等内容，是JavaScript开发者的必备参考书籍。<br><br>本书由尼古拉斯·扎卡斯撰写，他是一位知名的前端技术专家，拥有丰富的JavaScript开发经验。本书内容深入浅出，适合有一定编程基础的开发者阅读，通过学习本书，读者可以掌握JavaScript的高级特性，提高代码质量和开发效率。",
+      "reviews": [
+        {
+          "name": "张三",
+          "rating": "★★★★★",
+          "date": "2026-03-01",
+          "content": "这本书非常棒，内容全面且深入，是JavaScript开发者的必读书籍。作者讲解清晰，示例丰富，非常适合学习JavaScript的高级特性。"
+        },
+        {
+          "name": "李四",
+          "rating": "★★★★☆",
+          "date": "2026-02-15",
+          "content": "内容很详细，但是有些地方比较难懂，需要反复阅读。不过总体来说是一本非常好的JavaScript书籍。"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Python编程：从入门到实践",
+      "author": "埃里克·马瑟斯",
+      "price": 89.00,
+      "image": "https://file.ituring.com.cn/LargeCover/23047b0f0134221867e2",
+      "rating": 4.5,
+      "ratingCount": 98,
+      "publisher": "人民邮电出版社",
+      "publishDate": "2019-10-01",
+      "pages": 448,
+      "isbn": "9787115428028",
+      "description": "《Python编程：从入门到实践》是一本面向初学者的Python编程入门书籍，通过实际项目帮助读者学习Python编程。本书涵盖了Python的基本语法、数据结构、函数、类、文件操作等内容，并通过三个完整的项目（外星人入侵游戏、数据可视化、Web应用）帮助读者巩固所学知识。",
+      "reviews": [
+        {
+          "name": "王五",
+          "rating": "★★★★★",
+          "date": "2026-03-05",
+          "content": "这本书非常适合Python初学者，作者讲解清晰，示例丰富，通过实际项目学习非常有帮助。"
+        },
+        {
+          "name": "赵六",
+          "rating": "★★★★☆",
+          "date": "2026-02-20",
+          "content": "内容很基础，适合入门，但是对于有一定编程基础的人来说可能有点简单。"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "深入理解计算机系统",
+      "author": "Randal E. Bryant",
+      "price": 129.00,
+      "image": "https://img12.360buyimg.com/n1/jfs/t1/328223/32/18971/145043/68c3d0f2Fc1141045/610b642b09eb064e.jpg",
+      "rating": 5,
+      "ratingCount": 156,
+      "publisher": "机械工业出版社",
+      "publishDate": "2016-01-01",
+      "pages": 720,
+      "isbn": "9787111407010",
+      "description": "《深入理解计算机系统》是一本系统介绍计算机系统的书籍，涵盖了计算机的硬件和软件方面的知识。本书从程序员的角度出发，介绍了计算机系统的各个层次，包括硬件结构、指令系统、操作系统、编译系统等内容，帮助读者理解程序在计算机系统中是如何执行的。",
+      "reviews": [
+        {
+          "name": "孙七",
+          "rating": "★★★★★",
+          "date": "2026-03-10",
+          "content": "这本书是计算机专业学生的必读书籍，内容全面且深入，讲解清晰，帮助我更好地理解计算机系统的工作原理。"
+        },
+        {
+          "name": "周八",
+          "rating": "★★★★☆",
+          "date": "2026-02-25",
+          "content": "内容有点难度，需要一定的计算机基础，但是非常值得一读。"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "算法导论",
+      "author": "Thomas H. Cormen",
+      "price": 119.00,
+      "image": "https://cdn.how2cs.cn/csguide/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA.jpg",
+      "rating": 4.5,
+      "ratingCount": 87,
+      "publisher": "机械工业出版社",
+      "publishDate": "2013-01-01",
+      "pages": 780,
+      "isbn": "9787111407010",
+      "description": "《算法导论》是一本经典的算法教材，全面介绍了各种算法的设计和分析方法。本书涵盖了排序、搜索、图算法、动态规划、贪心算法等内容，并对每种算法的时间复杂度和空间复杂度进行了详细分析，是算法学习的权威参考书籍。",
+      "reviews": [
+        {
+          "name": "吴九",
+          "rating": "★★★★★",
+          "date": "2026-03-12",
+          "content": "这本书是算法学习的经典教材，内容全面，讲解详细，是计算机专业学生的必读书籍。"
+        },
+        {
+          "name": "郑十",
+          "rating": "★★★★☆",
+          "date": "2026-02-28",
+          "content": "内容比较理论化，需要一定的数学基础，但是对于理解算法的原理非常有帮助。"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "红楼梦",
+      "author": "曹雪芹",
+      "price": 98.00,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgUTr2lWLRz5u7mnRXvQzuY3JDFXahuO7LVQ&s",
+      "rating": 5,
+      "ratingCount": 256,
+      "publisher": "人民文学出版社",
+      "publishDate": "2008-07-01",
+      "pages": 1200,
+      "isbn": "9787020002207",
+      "description": "《红楼梦》是中国古典四大名著之一，由清代作家曹雪芹创作。小说以贾、史、王、薛四大家族的兴衰为背景，以贾宝玉、林黛玉、薛宝钗的爱情婚姻悲剧为主线，描绘了一群举止见识高于须眉之上的闺阁佳人的人生百态，展现了真正的人性美和悲剧美。",
+      "reviews": [
+        {
+          "name": "林黛玉",
+          "rating": "★★★★★",
+          "date": "2026-03-01",
+          "content": "满纸荒唐言，一把辛酸泪。都云作者痴，谁解其中味？"
+        },
+        {
+          "name": "贾宝玉",
+          "rating": "★★★★★",
+          "date": "2026-02-15",
+          "content": "假作真时真亦假，无为有处有还无。"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "三国演义",
+      "author": "罗贯中",
+      "price": 88.00,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkW6B4l1se4_82SdRABMen0IkJtWqORGCpuQ&s",
+      "rating": 4.5,
+      "ratingCount": 234,
+      "publisher": "人民文学出版社",
+      "publishDate": "2008-07-01",
+      "pages": 960,
+      "isbn": "9787020002207",
+      "description": "《三国演义》是中国古典四大名著之一，由明代作家罗贯中创作。小说描写了从东汉末年到西晋初年之间近百年的历史风云，以描写战争为主，诉说了东汉末年的群雄割据混战和魏、蜀、吴三国之间的政治和军事斗争，最终司马炎一统三国，建立晋朝的故事。",
+      "reviews": [
+        {
+          "name": "诸葛亮",
+          "rating": "★★★★★",
+          "date": "2026-03-05",
+          "content": "鞠躬尽瘁，死而后已。"
+        },
+        {
+          "name": "曹操",
+          "rating": "★★★★☆",
+          "date": "2026-02-20",
+          "content": "宁教我负天下人，休教天下人负我。"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "水浒传",
+      "author": "施耐庵",
+      "price": 85.00,
+      "image": "https://static.airchina.com.cn/upload/t/jWuZv5etyRvOB6L_a8mpHZ426gE=/670x670/img/store/438/1652348073012..jpg",
+      "rating": 4.5,
+      "ratingCount": 212,
+      "publisher": "人民文学出版社",
+      "publishDate": "2008-07-01",
+      "pages": 1000,
+      "isbn": "9787020002207",
+      "description": "《水浒传》是中国古典四大名著之一，由元末明初作家施耐庵创作。小说描写了北宋末年以宋江为首的108位好汉在梁山聚义，以及聚义之后接受招安、四处征战的故事。全书通过描写梁山好汉反抗欺压、水泊梁山壮大和受宋朝招安，以及受招安后为宋朝征战，最终消亡的宏大故事。",
+      "reviews": [
+        {
+          "name": "宋江",
+          "rating": "★★★★★",
+          "date": "2026-03-10",
+          "content": "忠义堂前绣字红旗后，一书'山东呼保义'，一书'河北玉麒麟'。"
+        },
+        {
+          "name": "武松",
+          "rating": "★★★★☆",
+          "date": "2026-02-25",
+          "content": "酒壮英雄胆，打虎景阳冈。"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "西游记",
+      "author": "吴承恩",
+      "price": 82.00,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTa0_DE8rbWzyEdAUWtmRV3ZEwi-elqwKLQQ&s",
+      "rating": 5,
+      "ratingCount": 268,
+      "publisher": "人民文学出版社",
+      "publishDate": "2008-07-01",
+      "pages": 880,
+      "isbn": "9787020002207",
+      "description": "《西游记》是中国古典四大名著之一，由明代作家吴承恩创作。小说描写了唐僧师徒四人西天取经的故事，一路上历经九九八十一难，降妖伏魔，最终取得真经。这本书是中国古代第一部浪漫主义章回体长篇神魔小说，充满了奇幻色彩和深刻的哲理。",
+      "reviews": [
+        {
+          "name": "孙悟空",
+          "rating": "★★★★★",
+          "date": "2026-03-12",
+          "content": "俺老孙来也！"
+        },
+        {
+          "name": "猪八戒",
+          "rating": "★★★★☆",
+          "date": "2026-02-28",
+          "content": "大师兄，师傅被妖怪抓走了！"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "百年孤独",
+      "author": "加西亚·马尔克斯",
+      "price": 78.00,
+      "image": "https://m.media-amazon.com/images/I/41ZAmA+408L._AC_UF1000,1000_QL80_.jpg",
+      "rating": 4.5,
+      "ratingCount": 189,
+      "publisher": "南海出版公司",
+      "publishDate": "2017-08-01",
+      "pages": 360,
+      "isbn": "9787544291170",
+      "description": "《百年孤独》是哥伦比亚作家加西亚·马尔克斯的代表作，也是拉丁美洲魔幻现实主义文学的代表作。小说讲述了布恩迪亚家族七代人的传奇故事，以及加勒比海沿岸小镇马孔多的百年兴衰，反映了拉丁美洲一个世纪以来风云变幻的历史。",
+      "reviews": [
+        {
+          "name": "马尔克斯",
+          "rating": "★★★★★",
+          "date": "2026-03-08",
+          "content": "许多年后，奥雷良诺上校站在行刑队面前，准会想起父亲带他去参观冰块的那个遥远的下午。"
+        },
+        {
+          "name": "读者",
+          "rating": "★★★★☆",
+          "date": "2026-02-22",
+          "content": "魔幻现实主义的巅峰之作，每一页都充满了惊喜。"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "巴黎圣母院",
+      "author": "维克多·雨果",
+      "price": 75.00,
+      "image": "https://piccdn3.umiwi.com/img/201902/27/201902270158200726868926.jpg?x-oss-process=image/resize,m_fill,h_320,w_240",
+      "rating": 4.5,
+      "ratingCount": 178,
+      "publisher": "人民文学出版社",
+      "publishDate": "2018-05-01",
+      "pages": 420,
+      "isbn": "9787020002207",
+      "description": "《巴黎圣母院》是法国作家维克多·雨果的代表作之一。小说以15世纪的巴黎为背景，讲述了巴黎圣母院的敲钟人卡西莫多、副主教克洛德·弗罗洛和吉卜赛女郎埃斯梅拉达之间的爱情悲剧。这部小说揭露了宗教的虚伪，宣告了禁欲主义的破产，歌颂了下层劳动人民的善良、友爱、舍己为人的优秀品质。",
+      "reviews": [
+        {
+          "name": "维克多·雨果",
+          "rating": "★★★★★",
+          "date": "2026-03-13",
+          "content": "丑在美的旁边，畸形靠近着优美，丑怪藏在崇高背后，美与丑并存，光明与黑暗相共。"
+        },
+        {
+          "name": "读者",
+          "rating": "★★★★☆",
+          "date": "2026-02-29",
+          "content": "卡西莫多的形象让人难忘，这是一部关于爱与美的经典之作。"
+        }
+      ]
+    }
+  ]
+}
