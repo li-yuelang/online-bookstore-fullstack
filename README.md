@@ -17,6 +17,7 @@ The backend source defines 27 HTTP endpoint mappings. The included test sources 
 ```text
 backend/   Spring Boot application, REST controllers, JPA entities, SQL schema/data, tests
 frontend/  React/Vite application, customer/admin routes, components, demo book data
+database/  Standalone MySQL initialization script from the project (sanitized)
 ```
 
 ## Run locally
@@ -39,6 +40,8 @@ Requirements: Java 8+, Maven, MySQL 8, Node.js and npm compatible with Vite 5.
    ```
 
 Vite proxies `/api` requests to `http://localhost:8080`. The backend initializes tables and demonstration book/review data from `backend/src/main/resources/schema.sql` and `data.sql`.
+
+`database/init_database.sql` is the original standalone MySQL initialization route, provided for inspecting or manually preparing a fresh database. The Spring Boot startup path above already uses its own `schema.sql` and `data.sql`, so running both initialization routes is unnecessary. The standalone script's hard-coded demo administrator account and plaintext password have been removed; create any test account locally.
 
 Run backend tests with `mvn test` in `backend/`; build the frontend with `npm run build` in `frontend/`.
 
