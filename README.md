@@ -1,52 +1,76 @@
-# Online Bookstore — React + Spring Boot
+# 线上书店系统 | Online Bookstore
 
-A full-stack course project with a React/Vite storefront and admin interface, a Spring Boot REST API, and a MySQL database. This repository is a curated copy of the final iteration: generated build output, dependencies, course handouts, submission archives, and local database credentials are excluded.
+基于 React、Spring Boot 和 MySQL 的前后端分离课程项目。仓库整理自最终迭代，覆盖顾客购物、管理员维护和销售统计三条业务线；保留源码、测试与数据库脚本，不包含依赖目录、构建产物、课程讲义或本机数据库连接密码。
 
-## Features
+## 项目亮点
 
-- Storefront: browse/search books, view details and reviews, manage a cart, and place orders.
-- Accounts: registration, login, profile, and enabled/disabled user status.
-- Admin interface: manage books, users, and orders; filter orders.
-- Statistics: sales totals, user spending, and personal purchase summaries.
-- Backend structure: Controller → Service → Repository with DTOs and JPA entities for users, books, reviews, cart items, orders, and order items.
+- **贯通购物闭环**：图书列表/搜索 → 异步加载详情与评论 → 数据库存储购物车 → 结算创建订单 → 扣减图书库存 → 查询历史订单。订单创建逻辑位于事务性 Service 中，前端在成功后刷新购物车和订单状态。
+- **按角色组织功能**：顾客可注册、登录、购买和查看个人数据；管理员可维护图书、禁用/解禁用户、查看全部订单。禁用状态在登录接口校验，前端按角色展示不同路由和入口。
+- **多条件查询与统计**：顾客和管理员的订单均支持日期范围、书名及组合筛选；提供图书热销榜、用户消费榜和个人购书统计，统计结果由后端查询并以表格呈现。
+- **可解释的分层设计**：后端采用 Controller → Service 接口/实现 → Spring Data JPA Repository → Entity，DTO 负责接口数据组装；前端按页面组件与共享 Context 组织状态，通过 Fetch API 与 REST 接口交换 JSON。
 
-The backend source defines 27 HTTP endpoint mappings. The included test sources contain 38 `@Test` methods across controller, service, and application tests. These counts describe the code, not a claim that every test currently passes in every environment.
+## 三次迭代如何演进
 
-## Project layout
+| 阶段 | 课程重点 | 本仓库可见的实现 |
+| --- | --- | --- |
+| 迭代 1：前端页面 | React 组件、路由、书店页面与交互 | 图书列表/详情、购物车、登录注册、个人信息等组件；React Router 页面导航；自定义 CSS |
+| 迭代 2：前后端贯通 | Fetch 异步通信、MySQL 持久化、完整下单流程 | REST API 返回图书、购物车与订单 JSON；JPA 实体和 Repository；从加购到下单的状态联动 |
+| 迭代 3：综合功能 | 管理端、筛选统计、后端架构和代码质量 | 图书 CRUD、用户状态管理、全站订单查询、三类统计；Service 接口/实现分离、DTO、测试代码 |
+
+这张表概括课程的迭代目标与仓库中的对应代码，不代表所有评分点均已通过验收。例如课程提到 Ant Design：`package.json` 中有该依赖，但最终页面主要使用原生表单/表格与自定义 CSS，并未实际引用 Ant Design 组件。
+
+## 业务功能
+
+| 顾客端 | 管理端 |
+| --- | --- |
+| 注册、登录；浏览/搜索图书及查看详情、评论 | 新增、编辑、删除图书及维护库存 |
+| 加入购物车、调整数量、结算下单 | 查看用户并禁用/解禁账号 |
+| 查看个人订单，按日期和书名筛选 | 查看全部订单，按日期和书名筛选 |
+| 查看指定时间范围内的个人购书数量与金额 | 查看指定时间范围内的图书热销榜和用户消费榜 |
+
+后端源码定义了 **27 个 HTTP 路由映射**；测试源码包含 **38 个 `@Test` 方法**。这些是静态代码统计，不等同于已在当前环境完成全部测试。
+
+## 技术与数据流
+
+`React / React Router / Vite` → `Fetch API + JSON` → `Spring Boot Controller` → `Service` → `Spring Data JPA Repository` → `MySQL`
+
+下单时，前端从购物车生成订单请求；后端检查库存、保存订单及订单项并扣减库存；成功后前端清空购物车并重新获取订单列表。订单筛选在服务层组合日期查询与书名过滤；热销榜、消费榜和个人统计使用 Repository 查询。
+
+## 目录结构
 
 ```text
-backend/   Spring Boot application, REST controllers, JPA entities, SQL schema/data, tests
-frontend/  React/Vite application, customer/admin routes, components, demo book data
-database/  Standalone MySQL initialization script from the project (sanitized)
+backend/   Spring Boot 源码、REST 接口、JPA 实体、SQL 初始化文件、测试
+frontend/  React/Vite 源码、顾客/管理员页面、静态演示数据
+database/  独立的 MySQL 初始化脚本（含演示管理员账号）
 ```
 
-## Run locally
+## 本地运行
 
-Requirements: Java 8+, Maven, MySQL 8, Node.js and npm compatible with Vite 5.
+环境：Java 8+、Maven、MySQL 8、与 Vite 5 兼容的 Node.js / npm。
 
-1. Create an empty MySQL database named `online_library`.
-2. Set `DB_URL`, `DB_USER`, and `DB_PASSWORD` for your own MySQL instance. `DB_URL` defaults to a local `online_library` database; `DB_USER` defaults to `root`. No database password is stored in this repository.
-3. Start the backend from `backend/`:
+1. 在 MySQL 中创建空数据库 `online_library`。
+2. 按本机环境设置 `DB_URL`、`DB_USER`、`DB_PASSWORD`。默认 URL 指向本机 `online_library`，默认用户名是 `root`；仓库不保存本机数据库连接密码。
+3. 在 `backend/` 启动后端：
 
    ```bash
    mvn spring-boot:run
    ```
 
-4. In another terminal, start the frontend from `frontend/`:
+4. 在另一终端进入 `frontend/` 启动前端：
 
    ```bash
    npm ci
    npm run dev
    ```
 
-Vite proxies `/api` requests to `http://localhost:8080`. The backend initializes tables and demonstration book/review data from `backend/src/main/resources/schema.sql` and `data.sql`.
+Vite 将 `/api` 请求代理到 `http://localhost:8080`。后端通过 `backend/src/main/resources/schema.sql` 和 `data.sql` 初始化表及演示图书/评论数据。图书列表在 API 请求失败时还会回退到 `frontend/src/data.json` 中的演示数据；这只是离线展示回退，不代表购物和订单功能脱离后端可用。
 
-`database/init_database.sql` is the original standalone MySQL initialization route, provided for inspecting or manually preparing a fresh database. The Spring Boot startup path above already uses its own `schema.sql` and `data.sql`, so running both initialization routes is unnecessary. The standalone script includes a demo administrator account (`admin` / `admin123`) with a plaintext password; use it only in an isolated local demo, never with real data or on a public server. The backend's automatic initialization scripts do not create this administrator account.
+`database/init_database.sql` 是另一条独立的手动初始化路径，适合查看完整 SQL 设计或准备全新演示数据库；正常启动后端时不必再执行它。该脚本包含演示管理员账号 `admin` / `admin123`（明文密码）；后端的自动初始化脚本**不会**创建这个账号。不要将该账号用于真实数据或公网环境。
 
-Run backend tests with `mvn test` in `backend/`; build the frontend with `npm run build` in `frontend/`.
+后端测试：在 `backend/` 执行 `mvn test`；前端构建：在 `frontend/` 执行 `npm run build`。整理仓库时已验证 `npm ci` 可安装依赖；当前环境未安装 Maven，且前端构建受本机文件访问限制，故不宣称测试或构建已全部通过。
 
-## Security and provenance
+## 已知限制与来源
 
-This is an educational demo, **not a production-ready commerce service**. The current login checks plaintext passwords and the UI's role-based route guards are not a substitute for server-side authorization. Do not deploy it with real user data or expose it to the public internet without proper password hashing, authentication/authorization, input validation, and security review.
+这是教学演示项目，**不是可直接上线的电商系统**。当前登录接口比较明文密码，管理端主要依赖前端路由展示控制，后端缺少真正的权限校验；也未覆盖生产级支付、并发库存保护等要求。请勿接入真实用户数据或直接暴露在公网。
 
-The work originated as a course assignment. The assignment PDFs and handout directories are not included; see [PROVENANCE.md](PROVENANCE.md). No license is asserted for course-provided material or third-party cover images.
+项目源自课程作业，课程要求 PDF 与 handout 目录未上传；来源说明见 [PROVENANCE.md](PROVENANCE.md)。课程提供材料和第三方封面图片不在此声明新的许可。
