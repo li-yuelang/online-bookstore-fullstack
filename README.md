@@ -41,7 +41,7 @@ Requirements: Java 8+, Maven, MySQL 8, Node.js and npm compatible with Vite 5.
 
 Vite proxies `/api` requests to `http://localhost:8080`. The backend initializes tables and demonstration book/review data from `backend/src/main/resources/schema.sql` and `data.sql`.
 
-`database/init_database.sql` is the original standalone MySQL initialization route, provided for inspecting or manually preparing a fresh database. The Spring Boot startup path above already uses its own `schema.sql` and `data.sql`, so running both initialization routes is unnecessary. The standalone script's hard-coded demo administrator account and plaintext password have been removed; create any test account locally.
+`database/init_database.sql` is the original standalone MySQL initialization route, provided for inspecting or manually preparing a fresh database. The Spring Boot startup path above already uses its own `schema.sql` and `data.sql`, so running both initialization routes is unnecessary. The standalone script includes a demo administrator account (`admin` / `admin123`) with a plaintext password; use it only in an isolated local demo, never with real data or on a public server. The backend's automatic initialization scripts do not create this administrator account.
 
 Run backend tests with `mvn test` in `backend/`; build the frontend with `npm run build` in `frontend/`.
 
